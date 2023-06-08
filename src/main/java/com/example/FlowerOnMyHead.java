@@ -1,13 +1,13 @@
 package com.example;
 
-import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.common.MinecraftForge;
 
-@Mod(modid = "examplemod", version = "1.0.0")
-public class ExampleMod {
+@Mod(modid = "FlowerOnMyHead", version = "1.0.0")
+public class FlowerOnMyHead {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        System.out.println("Dirt: " + Blocks.dirt.getUnlocalizedName());
+        MinecraftForge.EVENT_BUS.register(new RenderEventHandler());
     }
 }
